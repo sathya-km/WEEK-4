@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Field and Button Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Field and Button Example</h1>
+    <input type="text" id="textInput" placeholder="Type something...">
+    <button id="alertButton">Show Alert</button>
+
+    <script>
+        // Select the input field and button
+        const textInput = document.getElementById("textInput");
+        const alertButton = document.getElementById("alertButton");
+
+        // Add an onchange event to the input field
+        textInput.addEventListener("change", () => {
+            console.log("Input changed to:", textInput.value);
+        });
+
+        // Add an onclick event to the button
+        alertButton.addEventListener("click", () => {
+            alert("Input value is: " + textInput.value);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Form Example</h1>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button type="button" id="changeAttributesButton">Change Placeholders</button>
+    </form>
+
+    <script>
+        // Function to change the placeholder attributes of the input fields
+        function changePlaceholders() {
+            document.getElementById("name").placeholder = "Your full name";
+            document.getElementById("email").placeholder = "Your email address";
+            document.getElementById("password").placeholder = "Choose a secure password";
+        }
+
+        // Add event listener to the button
+        document.getElementById("changeAttributesButton").addEventListener("click", changePlaceholders);
+    </script>
+</body>
+</html>

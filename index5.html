@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Traversal Example</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Main Title</h1>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2
+                <ul>
+                    <li>Subitem 2.1</li>
+                    <li>Subitem 2.2</li>
+                </ul>
+            </li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        // Select all <li> elements
+        const listItems = document.querySelectorAll("li");
+
+        // Traverse and log node names
+        listItems.forEach(item => {
+            console.log("Node Name:", item.nodeName); // Log the current node name
+            
+            // Log parent node name
+            if (item.parentNode) {
+                console.log("Parent Node Name:", item.parentNode.nodeName);
+            }
+
+            // Log child node names
+            item.childNodes.forEach(child => {
+                if (child.nodeType === Node.ELEMENT_NODE) { // Check if the node is an element
+                    console.log("Child Node Name:", child.nodeName);
+                }
+            });
+
+            console.log('---'); // Separator for readability
+        });
+    </script>
+</body>
+</html>

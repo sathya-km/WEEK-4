@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .my-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .active {
+            background-color: green;
+            color: white;
+        }
+        .disabled {
+            background-color: gray;
+            color: lightgray;
+            cursor: not-allowed;
+        }
+        .highlight {
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Class Example</h1>
+    <button id="toggleButton" class="my-button">Click Me!</button>
+
+    <script>
+        const button = document.getElementById("toggleButton");
+
+        button.addEventListener("click", () => {
+            // Toggle the 'active' class
+            button.classList.toggle("active");
+
+            // If the 'active' class is not present, add the 'disabled' class
+            if (!button.classList.contains("active")) {
+                button.classList.add("disabled");
+            } else {
+                // Remove 'disabled' class if 'active' class is present
+                button.classList.remove("disabled");
+            }
+
+            // Toggle the 'highlight' class each time the button is clicked
+            button.classList.toggle("highlight");
+        });
+    </script>
+</body>
+</html>

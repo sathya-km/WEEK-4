@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selection Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to My Webpage</h1>
+    <p class="description">This is a sample paragraph describing the webpage.</p>
+    <p class="description">Here is another paragraph with more information.</p>
+    <ul id="fruit-list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+    <button class="btn">Click Me!</button>
+    
+    <script>
+        // Select elements by ID
+        const mainHeading = document.getElementById("main-heading");
+        console.log("Selected by ID:", mainHeading);
+
+        // Select elements by class
+        const descriptions = document.getElementsByClassName("description");
+        console.log("Selected by Class:", descriptions);
+
+        // Select elements by tag name
+        const listItems = document.getElementsByTagName("li");
+        console.log("Selected by Tag Name:", listItems);
+
+        // Bonus: Log each element in descriptions
+        for (let i = 0; i < descriptions.length; i++) {
+            console.log("Description Paragraph:", descriptions[i]);
+        }
+
+        // Bonus: Log each list item
+        for (let i = 0; i < listItems.length; i++) {
+            console.log("List Item:", listItems[i]);
+        }
+    </script>
+</body>
+</html>

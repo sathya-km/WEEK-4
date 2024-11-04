@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Content Example</title>
+</head>
+<body>
+    <h1 id="main-title">Original Title</h1>
+    <p id="description">This is the original description text.</p>
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        // Function to change the text content of the elements
+        function changeText() {
+            // Change the text content of the h1 element
+            const titleElement = document.getElementById("main-title");
+            titleElement.textContent = "Updated Title"; // Using textContent
+            
+            // Change the text content of the paragraph element
+            const descriptionElement = document.getElementById("description");
+            descriptionElement.innerHTML = "This is the updated <strong>description</strong> text."; // Using innerHTML
+        }
+
+        // Add event listener to the button
+        document.getElementById("changeTextButton").addEventListener("click", changeText);
+    </script>
+</body>
+</html>
